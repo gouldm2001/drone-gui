@@ -216,13 +216,11 @@ sa.start()
 time.sleep(.05)
 getPidParams()
 
+write_serial("telem_on 1")
 
 ts2 = millis()
 while True:
-    
-
-   
-    
+  
     counter = 0
     #get data from the drone and do things with it
     try:
@@ -296,7 +294,7 @@ while True:
         root.update()
     except: 
         break
-
+write_serial("telem_on 0")
   
 if __name__ == '__main__':
     #root.mainloop()
